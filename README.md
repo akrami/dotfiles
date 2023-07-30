@@ -5,6 +5,7 @@ Configuration personalised for applications I use
 
 ### VIM
 [.vimrc](vim/.vimrc) for the configuration file itself
+
 [.vim](vim/.vim) for all plugins directories, colors, and assets
 
 ### ZSH
