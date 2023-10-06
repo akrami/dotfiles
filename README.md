@@ -1,4 +1,4 @@
-# conf
+# Configuration Templates
 Configuration personalised for applications I use
 
 ## Configurations
@@ -10,3 +10,6 @@ Configuration personalised for applications I use
 
 ### ZSH
 [.zshrc](zsh/.zshrc) for zsh configuration mostly used on my macs. (install oh-my-zsh)
+
+### BASH
+[.bashrc](bash/.bashrc) for bash configuration
