@@ -37,10 +37,8 @@ export LANG=en_US.UTF-8
 export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock
 ss -a | grep -q $SSH_AUTH_SOCK
 if [ $? -ne 0 ]; then
-  echo 'process not found'
   npiperelaypath=$HOME/.local/npiperelay
   if [ -d $npiperelaypath ]; then
-    echo 'piperelay found'
     rm -f $SSH_AUTH_SOCK
     (setsid socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"$npiperelaypath/npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork &) >/dev/null 2>&1
   fi
