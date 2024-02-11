@@ -15,6 +15,7 @@ esac
 export LANG=en_US.UTF-8
 export SSH_AUTH_SOCK="$HOME/.ssh/agent.sock"
 export HISTFILE="$XDG_STATE_HOME/bash/history"
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
 # ================= OH-MY-BASH =================
 # Install oh-my-bash by this script:
