@@ -15,6 +15,8 @@ esac
 export LANG=en_US.UTF-8
 export SSH_AUTH_SOCK="$HOME/.ssh/agent.sock"
 export HISTFILE="$XDG_STATE_HOME/bash/history"
+export GIT_EDITOR=vim
+export EDITOR=vim
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
 # ================= OH-MY-BASH =================
@@ -27,7 +29,7 @@ OMB_USE_SUDO=true
 OMB_PROMPT_SHOW_PYTHON_VENV=true
 completions=(git composer ssh)
 aliases=(general ls)
-plugins=(git bashmarks)
+plugins=(git bashmarks pyenv)
 source "$OSH"/oh-my-bash.sh
 
 # ================= WSL-SSH =================
@@ -40,3 +42,7 @@ if [ $? -ne 0 ]; then
     (setsid socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"$npiperelaypath/npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork &) >/dev/null 2>&1
   fi
 fi
+
+# ================ FZF ===================
+source /home/alireza/.local/share/conf/bash/completion.bash
+source /home/alireza/.local/share/conf/bash/key-bindings.bash
